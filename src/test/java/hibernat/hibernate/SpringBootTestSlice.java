@@ -13,6 +13,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class SpringBootTestSlice {
     
     
+    
     @Autowired
     BookRepository bookRepository;
     
