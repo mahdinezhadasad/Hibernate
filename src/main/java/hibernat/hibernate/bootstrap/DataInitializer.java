@@ -2,9 +2,10 @@ package hibernat.hibernate.bootstrap;
 
 import hibernat.hibernate.domain.Book;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import hibernat.hibernate.repository.BookRepository;
-
+@Profile({"local","default"})
 @Component
 public class DataInitializer implements CommandLineRunner {
     
