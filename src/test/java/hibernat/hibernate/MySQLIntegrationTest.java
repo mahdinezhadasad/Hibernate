@@ -11,7 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-@ActiveProfiles("local")
+//@ActiveProfiles()
 @DataJpaTest
 @ComponentScan(basePackages ="hibernat.hibernate.bootstrap")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -23,9 +23,9 @@ public class MySQLIntegrationTest {
     
     @Test
     void testJpaTestSpliceTransaction() {
-        
+
         long countBefore = bookRepository.count ();
         assertThat (countBefore).isEqualTo (2);
-    
+
     }
 }
