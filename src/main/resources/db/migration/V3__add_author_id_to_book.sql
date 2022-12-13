@@ -1,0 +1,1 @@
+alter table book ADD authorId BIGINT;
