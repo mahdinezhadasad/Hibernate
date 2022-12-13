@@ -2,6 +2,7 @@ package hibernat.hibernate;
 
 import hibernat.hibernate.domain.Book;
 import hibernat.hibernate.repository.BookRepository;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -21,7 +23,7 @@ public class SpringBootTestSlice {
     
     @Autowired
     BookRepository bookRepository;
-    @Rollback(value = false)
+    @Commit
     @Order(2)
     @Test
     void testJpaTestSplice(){
